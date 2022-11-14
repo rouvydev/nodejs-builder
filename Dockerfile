@@ -1,4 +1,9 @@
-FROM s12m/gcloud-skaffold:latest
+FROM google/cloud-sdk:409.0.0-slim
+LABEL maintainer "ROUVY <infra@rouvy.com>"
+
+RUN apt-get update -y && \
+    apt-get install -y kubectl && \
+    curl -s https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh | bash && mv kustomize /usr/local/bin/kustomize
 
 ENV NODE_VERSION=16.16.0
 RUN apt install -y curl
