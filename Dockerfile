@@ -1,4 +1,4 @@
-FROM google/cloud-sdk:421.0.0
+FROM google/cloud-sdk:422.0.0
 LABEL maintainer "ROUVY <infra@rouvy.com>"
 
 RUN apt-get update -y && \
